@@ -6,9 +6,9 @@
         <title>This is my example homepage.</title>
     </head>
     <body>
-        <p>
+        <h1>
             IS 445 - Assignment 3. netID = chiayi3
-        </p>
+        </h1>
         <p>
             Relationship between the year acquired and the year constructed.
         </p>
@@ -30,8 +30,26 @@
         "y": { "field": "Year Constructed", "type": "quantitative","scale": {"domain": [1700,2050]}},
         "color": {"field": "Congress Dist", "type": "nominal"},
         "shape": {"field": "Bldg Status", "type": "nominal"}
-    }
+    },
+    
 };
-        vegaEmbed('#myviz', mySpec);
+    mySpec2 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "description": "Relationship between Agency Name and size.",
+        "width": 500,
+        "height": 500,
+        "data": {
+            "url":"data/building_inventory.csv"
+        },
+        "mark": {"type":"bar","clip": true},
+        "encoding": {
+            "x": { "field": "Congress District", "type": "quantitative"},
+            "y": { "field": "Square Footage", "type": "quantitative","aggregate": "sum", "field": "Square Footage",},
+            "color": {"field": "Congress Dist", "type": "nominal"},
+            "shape": {"field": "Bldg Status", "type": "nominal"}
+        },
+        
+    };
+        vegaEmbed('#myviz', mySpec, mySpec2);
     </script>
 </html>
