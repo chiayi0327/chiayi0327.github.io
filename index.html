@@ -18,7 +18,7 @@
     <script>
         mySpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "description": "A simple bar chart with embedded data.",
+    "description": "Relationship between the year acquired and the year constructed.",
     "data": {
         "url":"data/building_inventory.csv"
     },
@@ -27,7 +27,7 @@
         "x": { "field": "Year Acquired", "type": "quantitative","scale": {"domain": [1700,2050]}},
         "y": { "field": "Year Constructed", "type": "quantitative","scale": {"domain": [1700,2050]}},
         "color": {"field": "Congress Dist", "type": "nominal"},
-        "shape": {"field": "Congress Dist", "type": "nominal"}
+        "shape": {"field": "Bldg Status", "type": "nominal"}
     }
 };
         vegaEmbed('#myviz', mySpec);
