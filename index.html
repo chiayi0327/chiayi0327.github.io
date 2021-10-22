@@ -22,10 +22,10 @@
     "data": {
         "url":"data/building_inventory.csv"
     },
-    "mark": "point",
+    "mark": {"type":"point","clip": true},
     "encoding": {
-        "x": { "field": "Year Acquired", "type": "quantitative","scale": {"domain": [1500,2020]}},
-        "y": { "field": "Year Constructed", "type": "quantitative","scale": {"domain": [1500,2020]}},
+        "x": { "field": "Year Acquired", "type": "quantitative","scale": {"domain": [1500,2050]}},
+        "y": { "field": "Year Constructed", "type": "quantitative","scale": {"domain": [1500,2050]}},
     }
 };
         vegaEmbed('#myviz', mySpec);
