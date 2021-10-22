@@ -10,7 +10,7 @@
             This is some text.
         </p>
         <p>
-            This is some more text.
+            Relationship between the year acquired and the year constructed.
         </p>
         <div id="myviz">
         </div>
@@ -28,6 +28,7 @@
     "encoding": {
         "x": { "field": "Year Acquired", "type": "quantitative","scale": {"domain": [1700,2050]}},
         "y": { "field": "Year Constructed", "type": "quantitative","scale": {"domain": [1700,2050]}},
+        "size": {"bin": true, "field": "Square Footage"},
         "color": {"field": "Congress Dist", "type": "nominal"},
         "shape": {"field": "Bldg Status", "type": "nominal"}
     }
