@@ -38,4 +38,60 @@
 };
         vegaEmbed('#myviz', mySpec);
     </script>
+        <script>
+    mySpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "description": "Relationship between Agency Name and size.",
+        "width": 500,
+        "height": 500,
+        "data": {
+            "url":"data/building_inventory.csv"
+        },
+        "transform": [
+            {
+            "aggregate": [{
+            "op": "sum",
+            "field": "Square Footage",
+            "as": "congress_total"
+        }],
+        "groupby": ["Congress Dist"]
+    }
+  ],
+        "mark": {"type":"bar"},
+        "encoding": {
+            "x": { "field": "Congress Dist", "type": "nominal","sort": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]},
+            "y": { "field": "congress_total", "type": "quantitative" }
+        },
+        
+    };
+        vegaEmbed('#myviz', mySpec);
+    </script>
+    <script>
+        mySpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+            "description": "Relationship between Agency Name and size.",
+            "width": 500,
+            "height": 500,
+            "data": {
+                "url":"data/building_inventory.csv"
+            },
+            "transform": [
+                {
+                "aggregate": [{
+                "op": "sum",
+                "field": "Square Footage",
+                "as": "congress_total"
+            }],
+            "groupby": ["Congress Dist"]
+        }
+      ],
+            "mark": {"type":"bar"},
+            "encoding": {
+                "x": { "field": "Congress Dist", "type": "nominal","sort": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]},
+                "y": { "field": "congress_total", "type": "quantitative" }
+            },
+            
+        };
+            vegaEmbed('#myviz', mySpec);
+        </script>
 </html>
