@@ -25,11 +25,10 @@
         "data": {
             "url":"data/building_inventory.csv"
         },
-        "mark": {"type":"bar","clip": true},
+        "mark": {"type":"bar"},
         "encoding": {
-            "x": { "field": "Congress District", "type": "quantitative"},
+            "x": { "field": "Congress District", "type": "nominal"},
             "y": { "field": "Square Footage", "type": "quantitative","aggregate": "sum", "field": "Square Footage",},
-            "color": {"field": "Congress Dist", "type": "nominal"},
         },
         
     };
