@@ -25,10 +25,20 @@
         "data": {
             "url":"data/building_inventory.csv"
         },
+        "transform": [
+            {
+            "aggregate": [{
+            "op": "sum",
+            "field": "Square Footage",
+            "as": "congress_total"
+        }],
+        "groupby": ["Congress District"]
+    }
+  ],
         "mark": {"type":"point"},
         "encoding": {
             "x": { "field": "Congress District", "type": "nominal"},
-            "y": { "field": "Square Footage", "type": "quantitative","aggregate": "sum", "field": "Square Footage",},
+            "y": { "field": "congress_total", "type": "quantitative" }
         },
         
     };
